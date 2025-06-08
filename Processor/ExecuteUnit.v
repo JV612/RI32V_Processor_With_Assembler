@@ -1,7 +1,7 @@
+`timescale 1ns / 1ps
 `include "ALU.v"
 
-module EX (
-
+module ExecuteUnit (
     input wire clk,                        // Clock signal
     input wire [31:0] op1,                 // First operand (from Operand Fetch)
     input wire [31:0] op2,                 // Second operand (can be register or immediate)
@@ -12,13 +12,11 @@ module EX (
     input wire isAdd, isSub, isCmp, isMul, isDiv,
     input wire isMod, isLsl, isLsr, isAsr, isOr,
     input wire isAnd, isNot, isMov,         // Control signal for return
-    
     output reg flag_eq,
     output reg flag_gt,                    // Global flags array passed from Processor
     output reg [31:0] branchPC,            // Next PC for branch
     output reg isBranchTaken,              // Signal indicating if the branch is taken
     output reg [31:0] aluResult            // Result of the ALU operation
-
 );
 
 // Internal signals
