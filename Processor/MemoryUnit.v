@@ -1,8 +1,7 @@
 `timescale 1ns / 1ps
 
-module MA (
+module MemoryUnit (
     input wire clk,                   // Clock signal
-    input wire reset,                 // Reset signal
     input wire isLd,                  // Load signal
     input wire isSt,                  // Store signal
     input wire [31:0] op2,            // Data to store
@@ -34,13 +33,12 @@ module MA (
 
     //Memory operation
     always @(*) begin
-
         if (isLd) begin
             // Load operation
-            ldResult = data_memory[aluResult[7:0]]; // Load word from memory at address aluResult
+            ldResult <= data_memory[aluResult[7:0]]; // Load word from memory at address aluResult
         end else if (isSt) begin
             // Store operation
-            data_memory[aluResult[7:0]] = op2; // Store op2 at address aluResult
+            data_memory[aluResult[7:0]] <= op2; // Store op2 at address aluResult
         end
     end
 
