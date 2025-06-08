@@ -1,19 +1,15 @@
-module RF (
-    
+
+module RegisterFile (
     input wire clk,
     input wire reset,
-    
     input wire [3:0] rs1, // Read address 1
     input wire [3:0] rs2, // Read address 2
-    input wire [3:0] writeaddress,  // Write address
+    input wire [3:0] rd,  // Write address
     input wire [31:0] writeData, // Data to write
     input wire isWb,      // Writeback enable
-    
     output wire [31:0] op1, // Data output for register rs1
     output wire [31:0] op2  // Data output for register rs2
-
 );
-
     reg [31:0] regFileData [0:15]; // 16 registers, 32-bit width
 
     // Default values for registers
@@ -45,11 +41,9 @@ module RF (
     //     regFileData[rd] <= writeData; // Write to rd
     // end
     //Synchronous write logic
-    always @(negedge clk) begin
-        if (isWb && writeaddress!=4'b0000) begin // Writeback condition, avoid register 0 if necessary
-            regFileData[writeaddress] <= writeData;
+    always @(*) begin
+        if (isWb && rd!=4'b0000) begin // Writeback condition, avoid register 0 if necessary
+            regFileData[rd] <= writeData;
         end
-
     end
-
 endmodule
