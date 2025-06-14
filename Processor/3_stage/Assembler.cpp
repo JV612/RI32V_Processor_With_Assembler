@@ -130,7 +130,7 @@ map<string,string> InstructionMap = {
 
 int main() {
 
-    ifstream infile("AssemblyProgram.asm");
+    ifstream infile("Program.asm");
     if (!infile.is_open()) {
         cerr << "Error opening file AssemblyProgram.txt" << endl;
         return 1;
