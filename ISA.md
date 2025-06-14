@@ -1,6 +1,6 @@
 # RI32V ISA Usage Guide
 
-This document explains how to write assembly programs for the Simple 20‑bit RISC ISA used in the RI32V Pipeline project. It covers the available registers and the syntax for each supported instruction.
+This document explains how to write assembly programs for the Simple 32-bit ISA used in the RI32V Pipeline project. It covers the available registers and the syntax for each supported instruction.
 
 ---
 
@@ -15,6 +15,8 @@ The architecture provides 16 registers, referred to as `R0` through `R15`. Use t
 ---
 
 ## 🧠 Instruction Syntax
+
+ISA supports total 21 different instructions for differnet purposes.
 
 Write one instruction per line. Separate labels as well as operands by whitespace characters (spaces or tabs). Immediate values are integers (positive or negative). Labels (for branches) end with a colon.
 Write your programs in **UPPERCASE**, as the assembler is case-sensitive and expects instructions in uppercase.
