@@ -130,14 +130,12 @@ map<string,string> InstructionMap = {
 
 int main() {
 
-    // open file AssemblyProgram.txt
-    ifstream infile("AssemblyProgram.txt");
+    ifstream infile("AssemblyProgram.asm");
     if (!infile.is_open()) {
         cerr << "Error opening file AssemblyProgram.txt" << endl;
         return 1;
     }
 
-    // open file Instructions.txt
     ofstream outfile("Instructions.txt");
     if (!outfile.is_open()) {
         cerr << "Error opening file Instructions.txt" << endl;
