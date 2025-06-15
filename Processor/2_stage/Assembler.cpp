@@ -52,7 +52,7 @@ string ThreeAddressEncoder(string opcode_bin,string modifierbits,string arg1, st
 
         isImmediate += "1";
 
-        int immediate_value = stoi(arg2);
+        int immediate_value = stoi(arg3);
 
         string immediate_bin = "";
         for (int i = 15; i >= 0; --i) {
