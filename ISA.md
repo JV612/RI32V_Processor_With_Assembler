@@ -1,6 +1,6 @@
 # RI32V ISA Usage Guide
 
-This document explains how to write assembly programs for the Simple 32-bit ISA used in the RI32V Pipeline project. It covers the available registers and the syntax for each supported instruction.
+This document explains how to write assembly programs for the Simple 32-bit ISA used in the RI32V Pipeline project. It covers the available registers and the syntax for each supported instruction. The ISA that our Processor uses is inspired from Book [Basic Computer Architecture by Smruti R. Sarangi](https://www.cse.iitd.ac.in/~srsarangi/archbook/archbook.pdf)
 
 ---
 
